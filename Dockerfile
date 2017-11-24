@@ -26,11 +26,11 @@ COPY known_hosts .ssh/known_hosts
 
 RUN chown -R meteor:meteor .ssh /usr/bin/entrypoint.sh
 
-# Allow node to listen to port 80 even when run by non-root user meteor
+# Allow node to listen to port 8080 even when run by non-root user meteor
 RUN setcap 'cap_net_bind_service=+ep' $(readlink -e /usr/bin/nodejs) || true
 
 
-EXPOSE 80
+EXPOSE 8080 
 
 # Execute entrypoint as user meteor
 ENTRYPOINT ["su", "-c", "/usr/bin/entrypoint.sh", "meteor"]
