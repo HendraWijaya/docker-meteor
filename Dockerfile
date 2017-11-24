@@ -14,6 +14,9 @@ RUN apt-get update && \
 
 RUN npm install -g semver
 
+RUN mkdir -p /var/www
+RUN chown -R meteor:meteor /var/www
+
 # Install entrypoint
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
