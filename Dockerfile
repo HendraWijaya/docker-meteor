@@ -18,7 +18,7 @@ RUN npm install -g semver
 #RUN chown -R meteor:meteor /var/www
 
 RUN mkdir -p /home/meteor/www
-RUN chown -R meteor:meteor /home/meteor/www
+RUN chown meteor:meteor /home/meteor/www
 
 # Install entrypoint
 COPY entrypoint.sh /usr/bin/entrypoint.sh

@@ -47,7 +47,7 @@ fi
 
 # Make sure critical directories exist
 mkdir -p $APP_DIR
-chown -R meteor:meteor $APP_DIR
+chown meteor:meteor $APP_DIR
 
 mkdir -p $SRC_DIR
 
