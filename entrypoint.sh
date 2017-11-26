@@ -47,8 +47,9 @@ fi
 
 # Make sure critical directories exist
 mkdir -p $APP_DIR
-mkdir -p $SRC_DIR
+chown -R meteor:meteor $APP_DIR
 
+mkdir -p $SRC_DIR
 
 # getrepo pulls the supplied git repository into $SRC_DIR
 function getrepo {
