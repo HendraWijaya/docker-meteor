@@ -111,7 +111,7 @@ if [ -e "${METEOR_DIR}" ]; then
    fi
 
    # Bundle the Meteor app
-   echo "Building the bundle...(this may take a while)"
+   echo "Building the bundle...(this may take a while) memory 4096"
    mkdir -p ${APP_DIR}
    export TOOL_NODE_FLAGS="--max_old_space_size=4096"
    meteor build --directory ${APP_DIR}
