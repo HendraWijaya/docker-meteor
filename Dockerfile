@@ -10,7 +10,10 @@ RUN apt-get update && \
    (curl https://deb.nodesource.com/setup_4.x | bash) && \
    apt-get install -y nodejs jq && \
    apt-get clean && \
+   apt-get install libcap2-bin && \
+   setcap cap_net_bind_service=+ep `readlink -f \`which node\`` && \
    rm -Rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+   
 
 RUN npm install -g semver
 
