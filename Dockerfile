@@ -7,6 +7,7 @@ WORKDIR /home/meteor
 # Install git, curl
 RUN apt-get update && \
    apt-get install -y git curl bzip2 gnupg libcap2-bin && \
+   apt-get install g++ build-essential && \
    (curl https://deb.nodesource.com/setup_8.x | bash) && \
    apt-get install -y nodejs jq && \
    apt-get clean && \
