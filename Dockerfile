@@ -11,10 +11,10 @@ RUN apt-get update && \
    apt-get install -y nodejs jq && \
    apt-get clean && \
    apt-get install libcap2-bin && \
-   setcap cap_net_bind_service=+ep `readlink -f \`which node\`` && \
    rm -Rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
    
 
+RUN setcap cap_net_bind_service=+ep `readlink -f \`which node\``
 RUN npm install -g semver
 
 # Install entrypoint
