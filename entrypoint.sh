@@ -115,7 +115,6 @@ if [ -e "${METEOR_DIR}" ]; then
    mkdir -p ${APP_DIR}
    export TOOL_NODE_FLAGS="--max_old_space_size=4096"
    meteor npm install --save underscore b
-   meteor npm install --save b linkifyjs fibers
    meteor build --directory ${APP_DIR}
 fi
 
