@@ -14,7 +14,7 @@ RUN apt-get update && \
    rm -Rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
    
 
-RUN setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+#RUN setcap cap_net_bind_service=+ep `readlink -f \`which node\``
 RUN npm install -g semver
 
 # Install entrypoint
