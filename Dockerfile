@@ -28,7 +28,7 @@ RUN chown -R meteor:meteor .ssh /usr/bin/entrypoint.sh
 
 RUN readlink -f /usr/bin/node
 # Allow node to listen to port 80 even when run by non-root user meteor
-RUN setcap 'cap_net_bind_service=+ep' `readlink -f /usr/bin/nodejs`
+RUN setcap 'cap_net_bind_service=+ep' $(readlink -f $(which node))
 
 EXPOSE 80
 
